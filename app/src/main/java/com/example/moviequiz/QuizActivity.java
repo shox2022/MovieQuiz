@@ -101,13 +101,50 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     void insertSampleQuestions(QuizDatabase db) {
-        Question q = new Question();
-        q.question = "Who directed Inception?";
-        q.option1 = "Christopher Nolan";
-        q.option2 = "Scorsese";
-        q.option3 = "Spielberg";
-        q.option4 = "Tarantino";
-        q.answer = 1;
-        db.questionDao().insert(q);
+
+        Question q1 = new Question();
+        q1.question = "Who directed Inception?";
+        q1.option1 = "Christopher Nolan";
+        q1.option2 = "Martin Scorsese";
+        q1.option3 = "Steven Spielberg";
+        q1.option4 = "Quentin Tarantino";
+        q1.answer = 1;
+        db.questionDao().insert(q1);
+
+        Question q2 = new Question();
+        q2.question = "Which movie won Best Picture in 2020?";
+        q2.option1 = "1917";
+        q2.option2 = "Joker";
+        q2.option3 = "Parasite";
+        q2.option4 = "Once Upon a Time in Hollywood";
+        q2.answer = 3;
+        db.questionDao().insert(q2);
+
+        Question q3 = new Question();
+        q3.question = "Who played Iron Man in the MCU?";
+        q3.option1 = "Chris Evans";
+        q3.option2 = "Robert Downey Jr.";
+        q3.option3 = "Chris Hemsworth";
+        q3.option4 = "Mark Ruffalo";
+        q3.answer = 2;
+        db.questionDao().insert(q3);
+
+        Question q4 = new Question();
+        q4.question = "Which movie is NOT part of The Lord of the Rings trilogy?";
+        q4.option1 = "The Two Towers";
+        q4.option2 = "The Return of the King";
+        q4.option3 = "The Hobbit";
+        q4.option4 = "The Fellowship of the Ring";
+        q4.answer = 3;
+        db.questionDao().insert(q4);
+
+        Question q5 = new Question();
+        q5.question = "What year was The Matrix released?";
+        q5.option1 = "1995";
+        q5.option2 = "1997";
+        q5.option3 = "1999";
+        q5.option4 = "2001";
+        q5.answer = 3;
+        db.questionDao().insert(q5);
     }
 }
