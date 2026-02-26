@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -29,6 +30,8 @@ public class QuizActivity extends AppCompatActivity {
 
     CountDownTimer timer;
 
+    ImageView ivQuestion;
+
     @Override
     protected void onCreate(Bundle b) {
         super.onCreate(b);
@@ -41,6 +44,8 @@ public class QuizActivity extends AppCompatActivity {
 
         QuizDatabase db = QuizDatabase.getInstance(this);
         questions = db.questionDao().getAllQuestions();
+
+        ivQuestion = findViewById(R.id.ivQuestion);
 
         if (questions.isEmpty()) {
             insertSampleQuestions(db);
@@ -68,6 +73,8 @@ public class QuizActivity extends AppCompatActivity {
         Question q = questions.get(index);
 
         tvQuestion.setText(q.question);
+        ivQuestion.setImageResource(q.imageResId);
+
         ((RadioButton)findViewById(R.id.rb1)).setText(q.option1);
         ((RadioButton)findViewById(R.id.rb2)).setText(q.option2);
         ((RadioButton)findViewById(R.id.rb3)).setText(q.option3);
@@ -109,6 +116,7 @@ public class QuizActivity extends AppCompatActivity {
         q1.option3 = "Steven Spielberg";
         q1.option4 = "Quentin Tarantino";
         q1.answer = 1;
+        q1.imageResId = R.drawable.inception;
         db.questionDao().insert(q1);
 
         Question q2 = new Question();
@@ -118,6 +126,7 @@ public class QuizActivity extends AppCompatActivity {
         q2.option3 = "Parasite";
         q2.option4 = "Once Upon a Time in Hollywood";
         q2.answer = 3;
+        q2.imageResId = R.drawable.parasite;
         db.questionDao().insert(q2);
 
         Question q3 = new Question();
@@ -127,6 +136,7 @@ public class QuizActivity extends AppCompatActivity {
         q3.option3 = "Chris Hemsworth";
         q3.option4 = "Mark Ruffalo";
         q3.answer = 2;
+        q3.imageResId = R.drawable.ironman;
         db.questionDao().insert(q3);
 
         Question q4 = new Question();
@@ -136,6 +146,7 @@ public class QuizActivity extends AppCompatActivity {
         q4.option3 = "The Hobbit";
         q4.option4 = "The Fellowship of the Ring";
         q4.answer = 3;
+        q4.imageResId = R.drawable.lotr;
         db.questionDao().insert(q4);
 
         Question q5 = new Question();
@@ -145,6 +156,7 @@ public class QuizActivity extends AppCompatActivity {
         q5.option3 = "1999";
         q5.option4 = "2001";
         q5.answer = 3;
+        q5.imageResId = R.drawable.matrix;
         db.questionDao().insert(q5);
     }
 }
