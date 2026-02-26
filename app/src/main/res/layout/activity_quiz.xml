@@ -15,6 +15,13 @@
         android:layout_gravity="end"
         android:layout_marginBottom="12dp"/>
 
+    <ImageView
+        android:id="@+id/ivQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="12dp"/>
+
     <TextView
         android:id="@+id/tvQuestion"
         android:layout_width="match_parent"

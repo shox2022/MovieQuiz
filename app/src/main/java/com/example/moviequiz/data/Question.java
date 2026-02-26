@@ -14,5 +14,7 @@ public class Question {
     public String option2;
     public String option3;
     public String option4;
-    public int answer; // 1-4
+    public int answer;
+
+    public int imageResId;// 1-4
 }
